@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Graphs() {
-    myChart();
+    
     return (
         <div className='w-full'>
             <div class="flex items-center justify-center bg-gray-50 p-4">
@@ -146,7 +146,7 @@ export default function Graphs() {
                         <div class="text-sm font-medium text-violet-600 my-2">Department Wise Students</div>
                         <div className='flex justify-between items-center mt-4'>
                             <div>
-                                <canvas id='myChart'></canvas>
+                                {/* <canvas id='myChart'></canvas> */}
                             </div>
                         </div>
                     </div>
