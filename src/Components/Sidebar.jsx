@@ -3,7 +3,7 @@ import React from 'react'
 export default function Sidebar() {
   return (
     <div>
-      <div className='h-[100vh] w-[15vw] py-8 px-6 bg-gray-500 text-white shadow-2xl'>
+      <div className='h-full w-[15vw] py-8 px-6 bg-gray-500 text-white shadow-2xl'>
         <nav className='mt-4 ml-10'>
             <ul className='space-y-6 text-xl'>
                 <li><a href="#">Home</a></li>

@@ -1,7 +1,32 @@
 import React from 'react'
+import Chart from "chart.js/auto";
+import { CategoryScale } from "chart.js";
+import { useState } from "react";
+// import { Data } from "./Data";
+import PieChart from "./PieChart";
+import {Data} from "../utils/Data";
+
+
+Chart.register(CategoryScale);
 
 export default function Graphs() {
-    
+    const [chartData, setChartData] = useState({
+        labels: Data.map((data) => data.year), 
+        datasets: [
+          {
+            label: "Users Gained ",
+            data: Data.map((data) => data.userGain),
+            backgroundColor: [
+            //   "rgba(75,192,192,1)",
+              "#f3ba2f",
+              "#ffffff"
+            ],
+            borderColor: "black",
+            borderWidth: 2
+          }
+        ]
+      });
+
     return (
         <div className='w-full'>
             <div class="flex items-center justify-center bg-gray-50 p-4">
@@ -145,8 +170,8 @@ export default function Graphs() {
                     <div class="flex-col w-[85%]">
                         <div class="text-sm font-medium text-violet-600 my-2">Department Wise Students</div>
                         <div className='flex justify-between items-center mt-4'>
-                            <div>
-                                {/* <canvas id='myChart'></canvas> */}
+                            <div className='App'>
+                                <PieChart chartData={chartData}/>
                             </div>
                         </div>
                     </div>
